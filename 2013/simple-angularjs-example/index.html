@@ -1,0 +1,692 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+  <meta name="google-site-verification" content="VvyjvVXcJQa0QklHipu6pwm2PJGnnchIqX7s5JbbT_0" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="胡编一通，乱写一气" />
+
+
+
+  <meta name="keywords" content="AngularJS,jQuery," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="IIssNan's Notes" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'post'
+  };
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?50c15455e37f70aea674ff4a663eef27";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <title> Simple AngularJS Demo (Compare with jQuery) // IIssNan's Notes </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">IIssNan's Notes</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+<form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xWSYW1jSW_PiEKgkes91','2.0.0');
+</script>
+
+    </div>
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              Simple AngularJS Demo (Compare with jQuery)
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2013-11-21
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2013/simple-angularjs-example/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2013/simple-angularjs-example/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <p>这是一个简单的示例，演示一个段落(<code>p</code>)的内容随着输入框(<code>input[type=&quot;text&quot;]</code>)内容的改变而变。输入框中的内容可能因两个因素改变：</p>
+<ul>
+<li>用户输入</li>
+<li>服务器数据更新</li>
+</ul>
+<p>示例的原理就是监听输入框的内容，如果输入框内容发生改变，那么对应更新段落对应的内容。</p>
+<p><a href="http://code.iissnan.com/wp-content/uploads/2013/11/SimpleAngularDemo.zip" target="_blank" rel="external">下载Demo文件</a></p>
+<h3 id="使用jQuery来实现">使用jQuery来实现</h3><p>监听输入框的内容以及改变对应段落的内容之前，需要先获取他们的DOM引用，所以在HTML设定ID或者Class作为钩子。将HTML结构设定为：</p>
+<pre><code><span class="tag">&lt;<span class="title">div</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">input</span> <span class="attribute">id</span>=<span class="value">"customGreetingText"</span> <span class="attribute">type</span>=<span class="value">"text"</span> /&gt;</span>
+    <span class="tag">&lt;<span class="title">p</span>&gt;</span>
+        <span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"greetingText"</span>&gt;</span>Hello<span class="tag">&lt;/<span class="title">span</span>&gt;</span>, World!
+    <span class="tag">&lt;/<span class="title">p</span>&gt;</span>
+    <span class="tag">&lt;<span class="title">button</span> <span class="attribute">id</span>=<span class="value">"updateGreetingText"</span>&gt;</span>Update<span class="tag">&lt;/<span class="title">button</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">div</span>&gt;</span>
+
+...
+
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"../jquery.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+</code></pre><p>上述代码中，定义了一个id为<code>customGreetingText</code>的input元素、一个id为greetingText的span元素以及id为<code>updateGreetingText</code>的按钮。</p>
+<a id="more"></a>
+<p>按照此前所述原理，需要监听input内容的改变。那么在使用jQuery的脚本里，就需要为input的<code>change</code>和<code>keyup</code>事件注册回调函数，当用户输入<code>keyup</code>或者服务器数据更新时<code>change</code>事件发生，更新对应段落的代码：</p>
+<pre><code><span class="list">(<span class="keyword">function</span> <span class="list">()</span> <span class="collection">{
+    var customGreetingText =  $<span class="list">(<span class="string">"#customGreetingText"</span>)</span><span class="comment">;</span>
+
+    // Register a change listener on the input field
+    customGreetingText
+            .on<span class="list">(<span class="string">"change"</span>, updateGreetingText)</span>
+            .on<span class="list">(<span class="string">"keyup"</span>, updateGreetingText)</span><span class="comment">;</span>
+
+    // Mock the scenario that content changed by data from server.
+    $<span class="list">(<span class="string">"#updateGreetingText"</span>)</span>.on<span class="list">(<span class="string">"click"</span>, function <span class="list">()</span> <span class="collection">{
+        setTimeout<span class="list">(<span class="keyword">function</span> <span class="list">()</span> <span class="collection">{
+            customGreetingText.val<span class="list">(<span class="string">"Hi"</span>)</span>.trigger<span class="list">(<span class="string">"change"</span>)</span><span class="comment">;</span>
+        }</span>, <span class="number">1000</span>)</span><span class="comment">;</span>
+    }</span>)</span><span class="comment">;</span>
+
+    function updateGreetingText<span class="list">()</span> <span class="collection">{
+        $<span class="list">(<span class="string">"#greetingText"</span>)</span>.html<span class="list">(<span class="keyword">this.value</span>)</span><span class="comment">;</span>
+    }</span>
+}</span><span class="list">()</span>)</span><span class="comment">;</span>
+</code></pre><p>上述代码中，通过点击按钮<code>button#updateGreetingText</code>使用<code>setTimeout</code>来模拟从服务器获取数据更新的操作。</p>
+<h3 id="使用AngularJS来实现">使用AngularJS来实现</h3><p>与jQuery不同的是，在使用AngularJS时，不需要为元素定义ID或Class钩子。HTML代码变的更为简洁：</p>
+
+<!--￼0-->
+
+
+<p>注意到，在HTML结构上有稍许的变化：</p>
+<ul>
+<li>根元素html有一个<code>ng-app</code>的属性</li>
+<li>包含容器div有一个<code>ng-controller=&quot;HelloController&quot;</code>的属性</li>
+<li>输入框input有一个<code>ng-model=&quot;greeting.text&quot;</code>的属性</li>
+<li>按钮button由一个<code>ng-click=&quot;update()&quot;</code>的属性</li>
+</ul>
+<p>这些属性在AngularJS中称为<code>directive</code>，用于扩展HTML DOM。其中：</p>
+<ul>
+<li><code>ng-app</code>指明AngularJS将在这个元素($rootScope)及其子元素中生效；</li>
+<li><code>ng-controller</code>顾名思义，指定View对应的Controller，此例子中为<code>HelloController</code>；</li>
+<li><code>ng-model</code>指定input与<code>greeting</code>对象的<code>text</code>属性之间进行双向绑定（即View中的内容发生改变时<code>greeting.text</code>发生改变，反之亦然）；</li>
+<li>`{{}}`表示<code>greeting</code>对象的<code>text</code>属性单向绑定到View（即<code>greeting.text</code>发生改变时，View的内容也发生改变，反之无效）；</li>
+<li>最后，<code>ng-click</code>指明当button被点击时，执行了update()回掉函数。</li>
+</ul>
+<p>完成HTML结构定义后，定义<code>HelloController</code>：</p>
+<pre><code><span class="function"><span class="keyword">function</span> <span class="title">HelloController</span><span class="params">(<span class="variable">$scope</span>, <span class="variable">$timeout</span>)</span> </span>{
+    <span class="variable">$scope</span>.greeting = {
+        text: <span class="string">"Hello"</span>
+    };
+
+    <span class="comment">// Update data from server.</span>
+    <span class="variable">$scope</span>.update = <span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+        <span class="variable">$timeout</span>(<span class="function"><span class="keyword">function</span> <span class="params">()</span> </span>{
+            <span class="variable">$scope</span>.greeting.text = <span class="string">"Hi"</span>;
+        }, <span class="number">1000</span>);
+    };
+}
+</code></pre><p>在DOM Ready之后，Angular将执行<code>HelloController</code>中的内容。</p>
+<p>在<code>HelloController</code>中，设定<code>greeting</code>对象为<code>$scope</code>的属性，同时定义了<code>update</code>函数为<code>$scope</code>的方法。<code>$scope</code>是Controller和View之间的粘合剂，Controller给<code>$scope</code>对象设定属性或者方法，View通过<code>$scope</code>获取数据。</p>
+<p>可以看到在<code>HelloController</code>构造函数有两个以<code>$</code>开头的参数<code>$scope</code>和<code>$timeout</code>。在AngularJS中，这个称为service(<code>$scope</code>和<code>$timeout</code>为内建的service)，service用于封装通用的代码，比如<code>$http</code>服务，封装了网络操作相关的代码。</p>
+<p>与jQuery明显不同的是，JavaScript代码中没有明确地注册input交互事件的监听函数，这一切都由AngularJS在内部完成，借助于数据绑定，当输入框内容发生变化时，段落的内容也会发生改变。</p>
+<p>而这正是AngularJS神奇的开始。</p>
+<p><a href="http://code.iissnan.com/wp-content/uploads/2013/11/SimpleAngularDemo.zip" target="_blank" rel="external">下载Demo文件</a></p>
+
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/angularjs/"> #AngularJS </a>
+          
+            <a href="/tags/jquery/"> #jQuery </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/grunt-cannot-read-property-srcraw-of-undefeind/">Grunt - Cannot read property 'srcRaw' of undefined</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/sync-git-repos-in-cloud/">使用网盘（Dropbox/Google Drive）同步Git仓库</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2013/simple-angularjs-example/"
+               data-title="Simple AngularJS Demo (Compare with jQuery)" data-url="http://notes.iissnan.com/2013/simple-angularjs-example/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="https://avatars1.githubusercontent.com/u/32269?v=3&s=460" alt="IIssNan" />
+          <p class="site-author-name">IIssNan</p>
+        </div>
+        <p class="site-description motion-element">胡编一通，乱写一气</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">178</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">109</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/iissnan" target="_blank">GitHub</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="https://twitter.com/iissnan" target="_blank">Twitter</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/iissnan" target="_blank">Weibo</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://douban.com/people/iissnan" target="_blank">DouBan</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.zhihu.com/people/iissnan" target="_blank">ZhiHu</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#使用jQuery来实现"><span class="nav-number">1.</span> <span class="nav-text">使用jQuery来实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用AngularJS来实现"><span class="nav-number">2.</span> <span class="nav-text">使用AngularJS来实现</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp;  2011 - 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">IIssNan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/mist.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"notes-iissnan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+  
+
+</body>
+</html>

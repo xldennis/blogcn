@@ -2,203 +2,903 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wuchong.me/resume.html</loc>
-    <lastmod>2014-12-22T16:34:24.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/angularjs-application-unit-testing-getting-stated/</loc>
+    <lastmod>2015-06-05T09:19:17.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/07/19/linux-file-system/</loc>
-    <lastmod>2014-07-18T23:36:37.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/always-with-me/</loc>
+    <lastmod>2015-05-29T07:43:57.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/02/09/algorithm-sort-summary/</loc>
-    <lastmod>2014-02-09T15:48:26.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/interview/</loc>
+    <lastmod>2015-05-25T07:32:46.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/07/30/ali-bigdata-competition-write-to-the-5-monthes/</loc>
-    <lastmod>2014-07-30T04:16:45.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/questions-in-writing/</loc>
+    <lastmod>2015-03-23T04:40:29.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/01/24/change-to-pacman/</loc>
-    <lastmod>2014-01-24T08:21:55.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/station/</loc>
+    <lastmod>2015-03-23T04:39:49.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/10/17/digitalocean-vps-experience/</loc>
-    <lastmod>2014-10-17T04:31:18.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/croon/</loc>
+    <lastmod>2015-03-23T04:39:23.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/08/07/distributed-storage-system-knowledge/</loc>
-    <lastmod>2014-08-07T06:25:56.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/ten-years/</loc>
+    <lastmod>2015-03-23T04:39:12.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/04/24/easy-web-scraping-with-python/</loc>
-    <lastmod>2014-04-24T15:04:00.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/reading-list-2014-11-17/</loc>
+    <lastmod>2015-03-23T02:51:12.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2013/12/13/hello-%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2013-12-13T05:03:45.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/reading-list-2014-11-18/</loc>
+    <lastmod>2015-03-23T02:51:10.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/12/18/hexo-blog-to-coding/</loc>
-    <lastmod>2014-12-18T13:47:13.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/reading-list-2014-12-16/</loc>
+    <lastmod>2015-03-23T02:51:08.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/01/08/hexo-scrollup/</loc>
-    <lastmod>2014-01-08T00:14:45.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/reading-list-2014-12-28/</loc>
+    <lastmod>2015-03-23T02:51:05.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/12/13/hexo-theme-creating-image-styles/</loc>
-    <lastmod>2014-12-13T12:11:56.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/reading-list-2015-01-04/</loc>
+    <lastmod>2015-03-23T02:51:00.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/08/28/how-to-correctly-write-singleton-pattern/</loc>
-    <lastmod>2014-08-28T08:43:39.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/reading-list-2015-01-16/</loc>
+    <lastmod>2015-03-23T02:50:58.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/12/21/how-to-find-internet-job/</loc>
-    <lastmod>2014-12-21T07:06:16.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/reading-list-2015-01-26/</loc>
+    <lastmod>2015-03-23T02:50:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/11/20/how-to-use-jacman/</loc>
-    <lastmod>2014-11-20T01:58:17.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/reading-list-2015-1-31/</loc>
+    <lastmod>2015-03-23T02:50:52.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/03/25/interview-link-questions/</loc>
-    <lastmod>2014-03-25T14:58:06.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/reading-list-2015-02-03/</loc>
+    <lastmod>2015-03-23T02:50:43.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/02/25/jquery-datatable-sort-plugin/</loc>
-    <lastmod>2014-02-25T14:33:30.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/reading-list-2014-12-29/</loc>
+    <lastmod>2015-03-23T02:50:30.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/07/02/learn-regular-expressions/</loc>
-    <lastmod>2014-07-02T09:43:45.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/reading-list-2014-11-16/</loc>
+    <lastmod>2015-03-23T02:50:12.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/07/14/linux-boot-process/</loc>
-    <lastmod>2014-07-14T02:15:05.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/reading-list-2014-11-14/</loc>
+    <lastmod>2015-03-23T02:49:53.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/07/21/linux-file-manage/</loc>
-    <lastmod>2014-07-21T09:44:19.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/reading-list-2014-11-13/</loc>
+    <lastmod>2015-03-23T02:49:47.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/01/01/2013_summary/</loc>
-    <lastmod>2014-01-01T10:18:52.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/reading-list-2014-09-28/</loc>
+    <lastmod>2015-03-23T02:49:03.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/07/15/linux-permission-and-file/</loc>
-    <lastmod>2014-07-15T05:15:25.000Z</lastmod>
+    <loc>http://notes.iissnan.com/categories/index.html</loc>
+    <lastmod>2015-03-23T02:48:24.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/07/24/linux-process-manage/</loc>
-    <lastmod>2014-07-24T03:48:11.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/60-fps-on-the-mobile-web/</loc>
+    <lastmod>2015-03-23T02:25:47.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/09/30/looking-for-a-job-summary/</loc>
-    <lastmod>2014-09-30T04:22:01.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/using-custom-fonts-in-rails-4/</loc>
+    <lastmod>2015-03-23T02:23:28.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/04/29/odps-sql-build-offline-evaluation/</loc>
-    <lastmod>2014-04-29T13:11:33.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/the-challenge-with-spa/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/04/26/odps-sql-introduction/</loc>
-    <lastmod>2014-04-26T03:14:32.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2015/the-butterfly-effect/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/07/28/permutation-and-combination-realize/</loc>
-    <lastmod>2014-07-28T01:41:18.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/test-if-links-are-external-with-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/01/27/python-spider-gif/</loc>
-    <lastmod>2014-01-27T15:54:13.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2011/what-happened-to-console-log-in-ie8/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/04/19/recsys-cf-study/</loc>
-    <lastmod>2014-04-18T17:07:15.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2013/tdd-in-practice-javascript-string-duplicate/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/03/17/string-to-int/</loc>
-    <lastmod>2014-03-17T15:24:28.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/system-wide-proxy-on-windows7/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/06/23/the-days-in-the-pit/</loc>
-    <lastmod>2014-06-23T15:02:03.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2013/sync-git-repos-in-cloud/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/06/29/the-first-experience-of-mac/</loc>
-    <lastmod>2014-06-29T09:03:08.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2011/strict-mode/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/01/17/use-github-to-manage-hexo-source/</loc>
-    <lastmod>2014-01-17T15:55:58.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/sticky-footer/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/03/14/use-latex-in-blog/</loc>
-    <lastmod>2014-03-14T15:12:03.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2011/web-beacon/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/07/16/use-python-login-borrow-account/</loc>
-    <lastmod>2014-07-16T08:22:57.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/split-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/12/21/why-do-coderq/</loc>
-    <lastmod>2014-12-21T10:56:59.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2014/some-examples-of-using-apply-function/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/404.html</loc>
-    <lastmod>2014-12-22T16:18:37.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2012/sleep-function-in-batch/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/blog/2014/10/31/10-interesting-java-projects-you-can-contribute-and-learn/</loc>
-    <lastmod>2014-10-31T15:09:18.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2013/singleton-pattern-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/about/index.html</loc>
-    <lastmod>2014-09-30T02:18:00.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2013/simpledataformat/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
   <url>
-    <loc>http://wuchong.me/search/index.html</loc>
-    <lastmod>2014-12-22T16:18:37.000Z</lastmod>
+    <loc>http://notes.iissnan.com/2013/simple-angularjs-example/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/shadow-dom-101/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/say-goodbye-to-the-crazy-week/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/return-value-of-a-construction-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/reinstall-homebrew/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/redirect-by-user-agent/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/watchers-for-express-application-development/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/waiting-for-dom-to-finish-rendering/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/vundle-vim-plugin-manager/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/void-operator-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/using-svg/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/using-objects-to-orgnize-your-code/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/using-jquery-to-test-if-an-input-is-focus/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/using-html5-tags/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/using-delegate-with-hover-in-jquery/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2015/why-to-blog-using-static-site-generator/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/useful-css-snippets/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/update-rules-with-important-declaration-using-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/uninstall-mysql-in-macosx/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/understanding-compatibility-modes-in-internet-explorer-8/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/reactjs-keep-simple-everything-can-be-a-component/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/undefined-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/prototype-based-programming/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/property-default-value-in-apache-ant/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/properties-vs-instance-variables/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/prevent-vmware-workstation-guest-machines-from-sysning-time-with-host/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/phantomjs/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/parseint-function-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/parseint-1-0-19-18/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2015/out-of-control/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/open-sublimetext-from-terminal-on-mac/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/ngbook-scopes/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/my-software-stack-for-new-mac-os-x/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/mustache/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/morning/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/mimes/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/maximum-value-of-z-index/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/mateor/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/manipulate-cookie-in-iframes-of-ie/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/loops-in-settimeout/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/list-npm-packages/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/list-available-grunt-tasks/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2015/link-directives-after-asynchronous-calls-in-angularjs/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/limitations-of-ie-browsers/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/learn-vimscript-the-hard-way/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/learing-ruby-with-the-neo-ruby-koans/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2015/karma/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/kaizen/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/jsdoc-toolkit/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/jquery-selector-with-dot-character/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/jquery-plugin-boilerplate/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/what-not-to-do-and-what-to-do/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/javascript-versions-summary/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/javascript-style-guidelines/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/javascript-iife/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/two-years-with-angular/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/install-ruby-via-rvm-on-mac-osx/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/install-nodejs-from-source-on-centos/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/inspect-hover-style-of-elements-in-google-chrome/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/insertbefore/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/initial-value-of-prototype-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/important-rules-cause-errors-in-ie/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/import-an-apache-ant-project/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/image-resize-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/if-you-cant-explain-it-simply-you-dont-understand-it-well-enough./</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/ie6-flicker-fix/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/http-cookies-what-s-the-difference-between-max-age-and-expires/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/hello-world/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/hello-wordpress-from-magician-uic-s-hat/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/hello-java/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/grunt/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/grunt-import-external-data/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/grunt-cannot-read-property-srcraw-of-undefeind/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/github-flow/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/github-display-images/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/git-setup-a-tracking-branch/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/git-pull-with-rebase/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2015/getting-started-reactjs/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/getting-started-qunit/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/get-a-github-repository-as-a-zip-file-via-curl/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/function-bind-polyfill/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/free-web-course-from-code-school/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/express-settings-view-engine/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/express-settings-env/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/expose-shuffle-function-of-underscore/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/export-projects-like-subversion-in-git/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/explanation-of-angular-module/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/everything-you-always-wanted-to-know-about-touch-icons/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/essential-javascript-namespacing-patterns/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/equality-comparison-in-ecmascript-262-3r-edition/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/ensure-construct-property-when-rewrite-prototype-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/dom-foundation-node-objects/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/dockercon-2014-solomon-hykes/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/disqus-articles/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/diff-slice-substring-substr-from-their-arguments/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/detecting-support-of-local-storage/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/detecting-ie7-by-features/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/detecting-ie6-using-features/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/detecting-ie-by-browser-features/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/detecting-ie-browsers-below-versio-9-by-features/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/detect-if-object-is-empty-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/delete-specific-commit-git/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/declare-functions-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/debug-grunt-tasks-with-node-inspector/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/damn-hard-to-take-the-right-way/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/cut-and-paste-in-mac-os-x/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/transfer-files-using-scp/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/console-function-in-ie6-7/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/conditional-target-in-apache-ant/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/compass/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/comments-in-package-json/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2015/code-and-pray/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/closure-definition-in-javascript-definitive-guide/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/check-npm-packages-version/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/check-centos-version/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/change-yosemite-default-font/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/break-jquery-each-loop/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/bootstrap-themes/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/bootstrap-express-app/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/best-practice-escape-or-encodeuri-encodeuricomponent/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2015/atom-packages-for-web-developers/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/ask-or-not-to-ask/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/array-like-objects-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/approuter-in-expressjs/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/apache-ant/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/anounymous-function-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/angularjs-unit-testing/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/transclusion-and-scopes/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/the-refactoring-tales/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/add-items-to-array-in-javascript/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/action-methods-vs-normal-methods/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2012/access-window-document-in-a-iframe/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/a-guide-to-branching-in-mercurial/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/a-comprehensive-guide-to-styling-file-inputs/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/TDD-iteration/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/CSS-hacks-for-IE-browsers/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2011/CSS-Expression/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/CSS-Ellipsis-How-to-Manage-Multi-Line-Ellipsis-in-Pure-CSS/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2014/the-end-of-the-world-is-yesterday/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/tags/index.html</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://notes.iissnan.com/2013/jquery-mockjax/</loc>
+    <lastmod>2015-03-18T05:13:56.000Z</lastmod>
   </url>
   
 </urlset>

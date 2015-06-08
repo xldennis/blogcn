@@ -1,0 +1,661 @@
+<!doctype html>
+<html class="theme-next use-motion theme-next-mist">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+  <meta name="google-site-verification" content="VvyjvVXcJQa0QklHipu6pwm2PJGnnchIqX7s5JbbT_0" />
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="胡编一通，乱写一气" />
+
+
+
+  <meta name="keywords" content="JavaScript,JavaScript Foundation," />
+
+
+
+  <link rel="alternate" href="/atom.xml" title="IIssNan's Notes" type="application/atom+xml" />
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: 'Mist',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'post'
+  };
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?50c15455e37f70aea674ff4a663eef27";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+  <title> 详解 JavaScript 中的 parseInt 函数 // IIssNan's Notes </title>
+</head>
+
+<body>
+  <!--[if lte IE 8]>
+  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
+    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
+      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
+           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
+           style='margin-left:auto;margin-right:auto;display: block;'/>
+    </a>
+  </div>
+<![endif]-->
+
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">IIssNan's Notes</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<div class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu menu-left">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/">
+            <i class="menu-item-icon icon-home"></i> <br />
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            <i class="menu-item-icon icon-archives"></i> <br />
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            <i class="menu-item-icon icon-tags"></i> <br />
+            标签
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+<form class="site-search-form">
+  <input type="text" id="st-search-input" class="st-search-input st-default-search-input" />
+</form>
+<script type="text/javascript">
+  (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+    (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+    e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+  })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+  _st('install', 'xWSYW1jSW_PiEKgkes91','2.0.0');
+</script>
+
+    </div>
+  
+</div>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              详解 JavaScript 中的 parseInt 函数
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2013-08-09
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2013/parseint-function-in-javascript/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2013/parseint-function-in-javascript/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <p>之前在 Stack Overflow 看到题目 `parseInt(1/0, 19)，代码执行的结果是 18，令人出乎意料。虽然这个题目是很少见到的情况（0作为被除数、采用19进制），但这个题目是一个很好的了解JavaScript <code>parseInt</code> 函数的机会。</p>
+<p>要解答 <code>parseInt(1/0, 19)</code>这个题目，要理解两个知识点：</p>
+<ol>
+<li><code>1/0</code> 的值是什么？</li>
+<li><code>parseInt</code> 函数是怎么样将一个 <code>String</code> 转化成<code>Int</code>？</li>
+</ol>
+<h2 id="0_作为被除数">0 作为被除数</h2><p>JavaScript里的所有算术运算采用的是<a href="http://en.wikipedia.org/wiki/IEEE_754" target="_blank">IEEE 754 Standard</a>。在 IEEE 754 Standard 中定义当被除数为 0 时，结果是（正/负）无穷大，无穷大在 JavaScript 中使用 <code>Infinity</code> 代表。所以表达式 <code>1/0</code> 的结果是正无穷大，即：<code>Infinity</code>。</p>
+<h2 id="parseInt函数">parseInt函数</h2><p><code>parseInt</code>的定义是：接收一个字符串并返回一个基于指定基数的整型值。语法为：</p>
+<figure class="highlight lisp"><table><tr><td class="code"><pre><span class="line">parseInt<span class="list">(<span class="keyword">string</span>, radix)</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<p><code>parseInt</code> 执行的步骤可以分为四个：</p>
+<ul>
+<li>初步解析 string 参数</li>
+<li>解析 radix 基数参数</li>
+<li>根据 radix 再次解析字符串</li>
+<li>返回结果</li>
+</ul>
+<p>执行步骤说明如下：</p>
+<a id="more"></a>
+<h3 id="初步解析字符串">初步解析字符串</h3><p>函数指定第一个参数是字符串，但存在着传入的参数是非字符串类型的可能性。所以这一步中，首先将 string 参数转换成 字符串类型。<br>接着，剔除掉转换之后的字符串前面的空白符，生成新的字符串string1。若字符串为空，则返回NaN。</p>
+<p><code>parseInt(1/0, 19)</code> 中，<code>1/0</code> 表达式的值为 <code>Infinity</code>。<code>Infinity</code> 是一个数值，所以，在这一步将被转换成 <code>&quot;Infinity</code>。</p>
+<p>接着，判断string1是否包含+或者-符号，设定sign变量为+/-，并将符号从字符串中剔除，生成字符串string2。<br>这一步执行完毕之后，获取新的字符串 string2，没有包含空格以及+/-符号。</p>
+<h3 id="解析基数参数">解析基数参数</h3><p>与string参数相同，radix可能非数值，所以首先将radix转换成整型radix1。<br>在JavaScript中，radix的取值可能有两种：等价于0的值（比如undefined、null、false、””以及0本身），[2-36]。若radix1的取值不在这两者之中，返回NaN。<br>这一步执行完毕，获取新的基数值 radix1。</p>
+<h3 id="再次解析字符串">再次解析字符串</h3><p>基数的范围设定在[2-36]，其中前十位使用[0-9]表示，[10-35]位使用英语字母表示，即[a-z]或者[A-Z]。从这里可以看出基数的大小决定着字符串的取值有效范围[0-9a-ZA-Z]。例如：</p>
+<p><pre><code>parseInt(“a”, 10);<br>// 在基数为10的情况下，”i”不能被转换成有效的数值，所以返回的是NaN</code></pre></p>
+<p>parse(“a”, 11”);<br>// 基数更改为11，”a”可以被转换成10<br>由于基数会影响解析的行为，所以这里需要再次解析字符串。此时将逐个检查字符串中的字符，当遇到字符在基数指定的有效范围之外，解析停止，字符串中后续的字符将被丢弃，生成新的字符串string3。若string3为空，返回NaN。<br>需要注意的是这一步中，基数有一个特殊的取值情况是：</p>
+<ul>
+<li>当基数为16时，字符串中若开头为”0x”/“0X”，这两个字符将被过滤掉。因为16进制的表示法为“oxNN”。</li>
+</ul>
+<p>这一步执行完毕之后，获取新的字符串 string3。</p>
+<h3 id="返回结果">返回结果</h3><p>最后一步，将上一步中获取的string3转换成数值表示，如”a”在11进制中将被转换成10；然后将符号sign添加到数值上，并返回结果</p>
+<h2 id="再看_parseInt(1/0,19)">再看 <code>parseInt(1/0,19)</code></h2><p>从上面的执行步骤来看，parseInt(1/0, 19)即是parseInt(“Infinity”, 19)；在基数为19的情况下，字符串中第一个字符”I”是有效的数值，但第二个字符”n”无效，所以又变成了parseInt(“I”, 19)。”i”所对应的数值如下所示：</p>
+<p><pre><code>0 1 2 3 4 5 6 7 8 9 a  b  c  d  e  f  g  h  i<br>0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18</code></pre><br>所以结果是：18</p>
+<h2 id="发散">发散</h2><p>另外有一个道题目，将数组所有元素的字符串转换成整型值：</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line">[<span class="string">"10"</span>, <span class="string">"10"</span>, <span class="string">"10"</span>, <span class="string">"10"</span>, <span class="string">"10"</span>].<span class="function"><span class="title">map</span><span class="params">(parseInt)</span></span></span><br></pre></td></tr></table></figure>
+<p><code>map</code> 函数的语法为：<code>[].map(fn)</code>。</p>
+<p><code>map</code> 函数在数组的每个元素上执行fn，返回在每个元素上执行fn结果组成的数组。fn函数接收三个参数：元素值、元素索引值、数组本身。所以上面的调用执行的是：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">[</span><br><span class="line">    <span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">0</span>); <span class="comment">// 基数0, 即默认10进制</span></span><br><span class="line">    <span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">1</span>); <span class="comment">// 基数1无效，返回NaN</span></span><br><span class="line">    <span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">2</span>); <span class="comment">// 基数2， 10表示2</span></span><br><span class="line">    <span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">3</span>); <span class="comment">// 基数3， 10表3</span></span><br><span class="line">    <span class="built_in">parseInt</span>(<span class="string">"10"</span>, <span class="number">4</span>); <span class="comment">// 基数4， 10表示4</span></span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>所以，结果是：<code>[10, NaN, 2, 3, 4]</code>。</p>
+<h2 id="潜在的_Bug">潜在的 Bug</h2><p>如果使用JSHint校验parseInt(1/0)的时候会提示：</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="value">Line</span> 2<span class="value">: <span class="function">parseInt</span>(<span class="number">1</span>/<span class="number">0</span>);</span></span><br><span class="line">Missing radix parameter.</span><br></pre></td></tr></table></figure>
+<p>提示需要指定 radix（第二个参数）。举个例子：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">parseInt</span>(<span class="string">"08"</span>);</span><br></pre></td></tr></table></figure>
+<p>8进制和16进制的数字以”0”开头（16进制是”0X”)，所以在有些脚本解释器中（IE8浏览器）可能误以8进制来解析”08”这个字符串。在8进制中，”08”是个无效的值，所以无法得到预期值。为了保证结果的准确性，建议在使用parseInt的时候，指明基数。</p>
+<p>参考：</p>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/parseInt" target="_blank">ParseInt - MDN</a></li>
+<li><a href="http://es5.github.io/#x15.1.2.2" target="_blank">Annotated ECMAScript 5.1 # parseInt</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">map - MDN</a></li>
+<li><a href="http://en.wikipedia.org/wiki/IEEE_754" target="_blank">IEEE 754 Standard</a></li>
+</ul>
+
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/javascript/"> #JavaScript </a>
+          
+            <a href="/tags/javascript-foundation/"> #JavaScript Foundation </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2013/using-objects-to-orgnize-your-code/">[译] 使用对象字面量组织代码</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2013/getting-started-qunit/">QUnit快速上手</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="comments" id="comments">
+        
+          <div class="ds-thread" data-thread-key="2013/parseint-function-in-javascript/"
+               data-title="详解 JavaScript 中的 parseInt 函数" data-url="http://notes.iissnan.com/2013/parseint-function-in-javascript/">
+          </div>
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="https://avatars1.githubusercontent.com/u/32269?v=3&s=460" alt="IIssNan" />
+          <p class="site-author-name">IIssNan</p>
+        </div>
+        <p class="site-description motion-element">胡编一通，乱写一气</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">178</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-name">分类</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">109</span>
+              <span class="site-state-item-name">标签</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml">
+              <i class="menu-item-icon icon-feed"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+              <a href="https://github.com/iissnan" target="_blank">GitHub</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="https://twitter.com/iissnan" target="_blank">Twitter</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://weibo.com/iissnan" target="_blank">Weibo</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://douban.com/people/iissnan" target="_blank">DouBan</a>
+            </span>
+            
+              <span class="links-of-author-item">
+              <a href="http://www.zhihu.com/people/iissnan" target="_blank">ZhiHu</a>
+            </span>
+            
+          
+        </div>
+
+        
+        
+          <div class="cc-license motion-element">
+            <a href="http://creativecommons.org/licenses/by-nc-sa/4.0" class="cc-opacity" target="_blank">
+              <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+            </a>
+          </div>
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#0_作为被除数"><span class="nav-number">1.</span> <span class="nav-text">0 作为被除数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#parseInt函数"><span class="nav-number">2.</span> <span class="nav-text">parseInt函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#初步解析字符串"><span class="nav-number">2.1.</span> <span class="nav-text">初步解析字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#解析基数参数"><span class="nav-number">2.2.</span> <span class="nav-text">解析基数参数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#再次解析字符串"><span class="nav-number">2.3.</span> <span class="nav-text">再次解析字符串</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#返回结果"><span class="nav-number">2.4.</span> <span class="nav-text">返回结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再看_parseInt(1/0,19)"><span class="nav-number">3.</span> <span class="nav-text">再看 parseInt(1/0,19)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发散"><span class="nav-number">4.</span> <span class="nav-text">发散</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#潜在的_Bug"><span class="nav-number">5.</span> <span class="nav-text">潜在的 Bug</span></a></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp;  2011 - 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">IIssNan</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.3"></script>
+
+
+  <script type="text/javascript" src="/js/helpers.js?v=0.4.3"></script>
+  
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/js/motion_global.js?v=0.4.3" id="motion.global"></script>
+
+
+
+  <script type="text/javascript" src="/js/mist.js"></script>
+
+  
+  
+<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.3" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"notes-iissnan"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+
+
+  
+  
+
+</body>
+</html>
