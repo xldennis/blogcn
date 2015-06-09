@@ -1,0 +1,529 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blogcn/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/blogcn/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="沉思于浪潮之中..." />
+
+
+
+  <meta name="keywords" content="Algorithm,Interview,Leetcode,Programming," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'post'
+  };
+</script>
+
+
+
+
+  <title> The Leetcode Challenge // Dennis’s blog </title>
+</head>
+
+<body>
+<!--[if lte IE 8]> <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'> <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari." style='margin-left:auto;margin-right:auto;display: block;'/></a></div> <![endif]-->
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/blogcn/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Dennis’s blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
+     
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首頁
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          歸檔
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          標籤
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              The Leetcode Challenge
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於 2015-05-19
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分類於
+            
+              <a href="/blogcn/categories/Diary/">Diary</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <p>最近开始试着刷 <a href="https://leetcode.com/" target="_blank" rel="external">Leetcode</a> 了。倒也没有想太多，只是最近写的代码太多是查 API 调用，让人有了种沦为纯码农做体力活之感。虽然以前也曾有过算法无用论的想法，不过在工作了这一阵子之后，也慢慢开始体会到了数据结构和算法在实际生活中的实用。现在翻看一些相关文章，也不觉得算法像以前上课时那般枯燥了，偶尔居然有种拍案叫绝的感想。加上最近发现 Leetcode 支持的答题语言多了不少，还能支持用 Javascript。至此，还能有什么不去刷题的理由呢？</p>
+<a id="more"></a>
+<p>如果还有人不知道不知道 Leetcode 的大名，在这里引用<a href="http://coolshell.cn/articles/12052.html" target="_blank" rel="external">酷壳的文章</a>简单地介绍一下：“Leetcode 这个网站上的题都是一些经典的公司用来面试应聘者的面试题，很多人通过刷这些题来应聘一些喜欢面试算法的公司，比如：Google、微软、Facebook、Amazon 之类的这些公司，基本上是应试教育的功利主义。”</p>
+<p>不过，与其报着这样功利的心态去用 Leetcode，不如把它当成一次很好的回顾自己数据结构和算法的挑战。至少，这是我刷了将近一半题目之后的感受:)</p>
+<p>总体而言，Leetcode 上的题目难度并不算太大，主要分成两大类：一种为基础算法考察，主要包括常用的深度搜索 DFS，广度搜索 BFS，二分法查找 BS，动态规划 DP，两点趋中 TP 等，主要检查对基本数据结构的理解和掌握，基本上只要确定好算法和边界条件，基本上都能 AC。另一种则为数学编程题，除了找出相关的规律之外，更多需要考虑各种特别的测试案例，否则时常会因为考虑不周到而出现只能通过部分测试最后得到 Wrong Answer 的悲剧。</p>
+<p>虽然难度不太，要想一次就能通过倒也不容易，因此对于每一道题也不能掉以轻心。而且，Leetcode 还将题目按解题思路归类贴了标签，同一道题也可以根据这个提示用多种方式来解决。现在回想起来，前阵子只是单纯为了刷题通过率做得有些囫囵吞枣了。改天根据题目的不同类型重新写一次，并能分析一下相关的复杂度，才算是真的把这题目做透吧。</p>
+<p>另外，在使用 Leetcode 的过程中，也稍有一些不是太爽的地方：</p>
+<p>一、Leetcode 没有提供空间的使用数据情况。有时为了单纯提高速度都直接各自 Hashmap 用起来，实际工作里这倒不是一个好习惯。</p>
+<p>二、Runtime 时间相差较大。由于自己基本是用 JS 答题，虽然已经做好了速度不会太快的心理准备，不过就算是相同的代码，在运行时间有时会差上几百毫秒。有这一点上，C++ 的分布情况就显得正常得多了。</p>
+<p>三、Discuss 里面并不太活跃。虽然基本每题都会有人分享解答，但上面回复点赞者的数量还是少了不少。看着有些人提交了问题一直没有人回复，感觉有点桑心哈。</p>
+<p>自己相关的解题答案，全都提交到了这里：<a href="https://github.com/imcoddy/leetcode" target="_blank" rel="external">https://github.com/imcoddy/leetcode</a>。虽然离全部 AC 还有不小距离，不过今后会坚持更新，顺利的话，半年内应该能完成到自己满意的目标吧。</p>
+<p>同时，为了使里面的代码格式统一，还另外用 Nodejs 写了个 <a href="https://github.com/imcoddy/leetcode-crawler" target="_blank" rel="external">小爬虫</a>，可以将题目和代码定义预先抓取到本地，省去了经常到网站上查找的麻烦（毕竟本地 grep 搜索要便利不少，也方便自己不定期更新 problemset ）。虽然功能还很简陋，不过已经能满足我的需求了，有兴趣的同学不妨一试。</p>
+<p>最后，Leetcode 的相关资料网上很容易就能找到，@billryan 的这份<a href="https://github.com/billryan/algorithm-exercise" target="_blank" rel="external">总结</a>感觉相对做得完善一些，在这里顺便推荐一下。英文不错的同学还可以多关注一下 Leetcode 的<a href="http://articles.leetcode.com/" target="_blank" rel="external">博客</a>，里面的每一篇文章都值得细读一遍。嗯，我都有点再写个爬虫把里面的文章全部抓下来整理的冲动了 :P</p>
+<p>最最后，让我们记住下面这句话：</p>
+<blockquote>
+<p>Language might not last, but algorithm will long live. Happy Leetcoding!</p>
+</blockquote>
+
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blogcn/tags/Algorithm/"> #Algorithm </a>
+          
+            <a href="/blogcn/tags/Interview/"> #Interview </a>
+          
+            <a href="/blogcn/tags/Leetcode/"> #Leetcode </a>
+          
+            <a href="/blogcn/tags/Programming/"> #Programming </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blogcn/2015/05/28/mastering-bitcoin-chapter-10-bitcoin-security/">Mastering Bitcoin Ch10: Bitcoin Security</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blogcn/2015/05/17/upgrade-to-hexo-3/">Upgrade to Hexo 3</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="comments" id="comments">
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="/blogcn/images/default_avatar.jpg" alt="Dennis Liu" />
+          <p class="site-author-name">Dennis Liu</p>
+        </div>
+        <p class="site-description motion-element">沉思于浪潮之中...</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <p class="post-toc-empty">此文章未包含目錄</p>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">Dennis Liu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/blogcn/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blogcn/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/blogcn/js/fancy-box.js"></script>
+
+
+  <script type="text/javascript" src="/blogcn/js/helpers.js"></script>
+  
+
+  <script type="text/javascript" src="/blogcn/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/blogcn/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/blogcn/js/motion_global.js" id="motion.global"></script>
+
+
+
+
+  
+  
+<script type="text/javascript" src="/blogcn/js/bootstrap.scrollspy.js" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+  
+
+  
+
+
+
+
+  
+  
+
+</body>
+</html>

@@ -1,0 +1,536 @@
+<!doctype html>
+<html class="theme-next use-motion ">
+<head>
+  
+
+<meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+  <link rel="stylesheet" type="text/css" href="/blogcn/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5"/>
+
+
+<link rel="stylesheet" type="text/css" href="/blogcn/css/main.css?v=0.4.3"/>
+
+
+    <meta name="description" content="沉思于浪潮之中..." />
+
+
+
+  <meta name="keywords" content="Bitcoin,Translation," />
+
+
+
+
+
+  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.3" />
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var CONFIG = {
+    scheme: '',
+    analytics: {
+      google: ''
+    },
+    sidebar: 'post'
+  };
+</script>
+
+
+
+
+  <title> Network/Miner Fee Policy Migration Plan // Dennis’s blog </title>
+</head>
+
+<body>
+<!--[if lte IE 8]> <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'> <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode"><img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari." style='margin-left:auto;margin-right:auto;display: block;'/></a></div> <![endif]-->
+  <div class="container one-column page-post-detail">
+    <div class="headband"></div>
+
+    <div id="header" class="header">
+      <div class="header-inner">
+        <h1 class="site-meta">
+  <span class="logo-line-before"><i></i></span>
+  <a href="/blogcn/" class="brand">
+      <span class="logo">
+        <i class="icon-logo"></i>
+      </span>
+      <span class="site-title">Dennis’s blog</span>
+  </a>
+  <span class="logo-line-after"><i></i></span>
+</h1>
+
+
+  <ul id="menu" class="menu">
+     
+    
+      
+      <li class="menu-item menu-item-home">
+        <a href="/">
+          <i class="menu-item-icon icon-home"></i> <br />
+          首頁
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-archives">
+        <a href="/archives">
+          <i class="menu-item-icon icon-archives"></i> <br />
+          歸檔
+        </a>
+      </li>
+    
+      
+      <li class="menu-item menu-item-tags">
+        <a href="/tags">
+          <i class="menu-item-icon icon-tags"></i> <br />
+          標籤
+        </a>
+      </li>
+    
+  </ul>
+
+
+      </div>
+    </div>
+
+    <div id="main" class="main">
+      <div class="main-inner">
+        <div id="content" class="content">
+          
+
+  <div id="posts" class="posts-expand">
+    
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
+              Network/Miner Fee Policy Migration Plan
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          發表於 2014-01-25
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分類於
+            
+              <a href="/blogcn/categories/Bitcoin/">Bitcoin</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        <h2 id="译者前言：">译者前言：</h2><p>据比特币核心开发人员 Mike Hearn 透露，比特币协议在<a href="http://www.8btc.com/4-new-bitcoin-features" target="_blank" rel="external">今年将会迎来四大改动</a>，其中一项就是转账所需要的交易费（transaction fee）将会浮动。实际上，Gavin Andresen 在几个月前就在一篇笔记中为大家勾画了交易费的变更计划。下面就让我们来看看它的详细情况吧。<br><a id="more"></a></p>
+<h1 id="网络/矿工收费政策的迁移计划">网络/矿工收费政策的迁移计划</h1><p>要想改变交易在网络中传递以及矿工将其保存到区块链中所需的交易费用，是需要花一些心思的。政策不匹配可能会导致用户的交易无法得到确认，这要么是交易无法到达矿工那里（它们没有被传递过去），要么就是交易被矿工直接拒绝了。</p>
+<p>我一直在努力简化 0.9 版本的交易费规则。这篇帖子的目的是说明所有使这一转变尽可能顺利执行所需要的细节。</p>
+<p>总体的思路是，交易生成部分的代码将会比较保守，从而保证生成与以前版本的规则相一致的交易。 而交易传递和挖矿确认的代码被会变得更加主动，以满足未来可能发生的变化。</p>
+<h2 id="0-8-5_版规则">0.8.5 版规则</h2><h3 id="0-8-5_传递规则">0.8.5 传递规则</h3><p>基本费用：每 1000 字节 10000 聪（satoshis），交易的大小将向上取整至最接近的 1000 字节（例如 1001 字节的交易需要 20000 聪）。这个值可以通过 minrelaytxfee 参数来进行更改。</p>
+<p>如果交易符合下列条件的话：</p>
+<ul>
+<li>支付的成本低于收费的基本费用</li>
+<li>小于 10000 字节</li>
+<li>没有任何一个输出小于0.01 XBT</li>
+</ul>
+<p>那么它们将被认为是“免费交易”。他们将会被限速，然后（在合适的时候）传递出去。</p>
+<p>这里还有另一个相关的规则：如果交易的输出非常小的话（大概在 5000 聪左右，我们称为“尘土交易”）将被认为是不合标准的从而不会被转发。</p>
+<h3 id="0-8-5_纳入规则">0.8.5 纳入规则</h3><p>所有的传递规则依然适用，因为节点不会去挖掘交易，除非他们将其传递出去（以及接受并纳入自己的内存池里）。</p>
+<p>包含着大量免费交易、大小为 27000 字节的块（通过 blockprioritysize 参数可以改变）所具有的优先级大于 57600000 的块（这等于一个 250 个字节的交易其输入为 1XBT，并且超过了一天时间）。</p>
+<p>块（默认 blockmaxsize：250000 字节）的其余部分则包含着至少 10000 聪每 1000 字节的交易（可以通过 mintxfee 参数改变）。注意，这里没有对字节数进行取整。</p>
+<h2 id="0-8-6_版规则变更提议">0.8.6 版规则变更提议</h2><h3 id="0-8-6_传递规则">0.8.6 传递规则</h3><p>除去了“所有输出必须大于 100 聪”的规则。（这是为了简化事务创建/处理逻辑。）</p>
+<h3 id="0-8-6_纳入规则">0.8.6 纳入规则</h3><p>将默认的 maxblocksize 增加至 350000 字节。 将高优先级事务的默认空间增加至 30000 字节。（这是为了适应更高的交易量，并用来衡量默认的算力占了多大的比例。）</p>
+<h3 id="0-8-6_钱包">0.8.6 钱包</h3><p>超过 1000 字节的交易必须支持交易费。（这是为了给免费交易预留空间。）</p>
+<h2 id="0-9_版规则变更提议">0.9 版规则变更提议</h2><p>优先级计算方式将被修改，使得花费中额外的输入不会降低优先级。（这是为了鼓励清理灰尘交易造成的 UTXO 设置。）</p>
+<h3 id="0-9_传递规则">0.9 传递规则</h3><p>当计算传递所需的最小交易费时，不再四舍五入到下一个 1000 字节。 （这是为了与控矿代码匹配）</p>
+<p>新的“拒绝”消息将被实现，告诉其它结点他们的交易由于费用不足而不会被传递下去。（这只是一个临时的解决办法，我们会努力想出一个对 SPV 更友好的解决方案。）</p>
+<h3 id="0-9_纳入规则">0.9 纳入规则</h3><p>要求矿工必须设置 mintxfee 和 minblocksize 等参数，如果他们不这样做将被拒绝开采。 （这是为了让交易费/块大小等在评估时决策非中心化。​​）</p>
+<h3 id="0-9_钱包">0.9 钱包</h3><p>使用新的“聪明费用（smartfee）​​”代码，来确定交易是否具有足够高的优先级将在不久的几个块区块中得到开采。 如果优先级够高，并且旧规则下的优先级也大于旧阈值，则传递时不需要交易费。</p>
+<p>如果交易被判定为不应该免费：将按 0.8.6 的传递规则计算最低费用，并与使用新的“聪明费用”代码计算出来的费用比较，选择二者中较大的数值来当作交易费。</p>
+<h2 id="0-9_版后期的变更">0.9 版后期的变更</h2><p>长远的目标是摆脱计算交易费的相关常数的所有的硬编码，让矿工来决定他们要处理的交易，并让钱包找出矿工以及矿工所处理的内容。</p>
+<h3 id="0-9+_传递规则">0.9+ 传递规则</h3><p>剔除 minrelaytxfee 参数，实现一个有优先级，内存有限的内存池。传递过来的交易如果适用的话将马上放入池中，不合适的将被拒绝。（具体实现还有待决定，也许会拒绝那些虽然具有优先级但权值小于当前池中最小权值的交易，并驱逐时间最长的交易以保持池的空余容量。）</p>
+<h3 id="0-9+_钱包">0.9+ 钱包</h3><p>剔除旧规则下的计算代码，只需使用新的交易费估算代码。（因为完整性检查的原因，将拒绝我们的内存池不会传递的交易。）</p>
+
+      
+    </div>
+
+    <div class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blogcn/tags/Bitcoin/"> #Bitcoin </a>
+          
+            <a href="/blogcn/tags/Translation/"> #Translation </a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blogcn/2014/04/07/a-finite-monetary-supply-for-bitcoin/">A Finite Monetary Supply For Bitcoin</a>
+            
+          </div>
+
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blogcn/2014/01/18/do-not-use-a-brainwallet/">Do Not Use A Brainwallet! You Are Likely To Lose Your Coins!</a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </div>
+  </div>
+
+
+
+    
+      <div class="comments" id="comments">
+        
+      </div>
+    
+  </div>
+
+
+        </div>
+
+        
+      </div>
+
+
+      
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <div class="site-overview">
+        <div class="site-author motion-element">
+          <img class="site-author-image" src="/blogcn/images/default_avatar.jpg" alt="Dennis Liu" />
+          <p class="site-author-name">Dennis Liu</p>
+        </div>
+        <p class="site-description motion-element">沉思于浪潮之中...</p>
+        <div class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">21</span>
+              <span class="site-state-item-name">文章</span>
+            </a>
+          </div>
+
+          <div class="site-state-item site-state-categories">
+            
+              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-name">分類</span>
+              
+          </div>
+
+          <div class="site-state-item site-state-tags">
+            <a href="/tags">
+              <span class="site-state-item-count">41</span>
+              <span class="site-state-item-name">標籤</span>
+              </a>
+          </div>
+
+        </div>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+      </div>
+
+      
+        <div class="post-toc-wrap sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator"></div>
+          <div class="post-toc">
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#译者前言："><span class="nav-number">1.</span> <span class="nav-text">译者前言：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络/矿工收费政策的迁移计划"><span class="nav-number"></span> <span class="nav-text">网络/矿工收费政策的迁移计划</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#0-8-5_版规则"><span class="nav-number">1.</span> <span class="nav-text">0.8.5 版规则</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-8-5_传递规则"><span class="nav-number">1.1.</span> <span class="nav-text">0.8.5 传递规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-8-5_纳入规则"><span class="nav-number">1.2.</span> <span class="nav-text">0.8.5 纳入规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-8-6_版规则变更提议"><span class="nav-number">2.</span> <span class="nav-text">0.8.6 版规则变更提议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-8-6_传递规则"><span class="nav-number">2.1.</span> <span class="nav-text">0.8.6 传递规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-8-6_纳入规则"><span class="nav-number">2.2.</span> <span class="nav-text">0.8.6 纳入规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-8-6_钱包"><span class="nav-number">2.3.</span> <span class="nav-text">0.8.6 钱包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-9_版规则变更提议"><span class="nav-number">3.</span> <span class="nav-text">0.9 版规则变更提议</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-9_传递规则"><span class="nav-number">3.1.</span> <span class="nav-text">0.9 传递规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-9_纳入规则"><span class="nav-number">3.2.</span> <span class="nav-text">0.9 纳入规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-9_钱包"><span class="nav-number">3.3.</span> <span class="nav-text">0.9 钱包</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#0-9_版后期的变更"><span class="nav-number">4.</span> <span class="nav-text">0.9 版后期的变更</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#0-9+_传递规则"><span class="nav-number">4.1.</span> <span class="nav-text">0.9+ 传递规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#0-9+_钱包"><span class="nav-number">4.2.</span> <span class="nav-text">0.9+ 钱包</span></a></li></ol></li></ol></div>
+            
+          </div>
+          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+        </div>
+      
+
+    </div>
+  </div>
+
+
+    </div>
+
+    <div id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; &nbsp; 
+  2015
+  <span class="with-love">
+    <i class="icon-heart"></i>
+  </span>
+  <span class="author">Dennis Liu</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 強力驅動
+</div>
+
+<div class="theme-info">
+  主題 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT
+  </a>
+</div>
+
+
+
+      </div>
+    </div>
+
+    <div class="back-to-top"></div>
+  </div>
+
+  <script type="text/javascript" src="/blogcn/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+
+  
+  <script type="text/javascript" src="/blogcn/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/blogcn/js/fancy-box.js"></script>
+
+
+  <script type="text/javascript" src="/blogcn/js/helpers.js"></script>
+  
+
+  <script type="text/javascript" src="/blogcn/vendors/velocity/velocity.min.js"></script>
+  <script type="text/javascript" src="/blogcn/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/blogcn/js/motion_global.js" id="motion.global"></script>
+
+
+
+
+  
+  
+<script type="text/javascript" src="/blogcn/js/bootstrap.scrollspy.js" id="bootstrap.scrollspy.custom"></script>
+
+
+<script type="text/javascript" id="sidebar.toc.highlight">
+  $(document).ready(function () {
+    var tocSelector = '.post-toc';
+    var $tocSelector = $(tocSelector);
+    var activeCurrentSelector = '.active-current';
+
+    $tocSelector
+      .on('activate.bs.scrollspy', function () {
+        var $currentActiveElement = $(tocSelector + ' .active').last();
+
+        removeCurrentActiveClass();
+        $currentActiveElement.addClass('active-current');
+
+        $tocSelector[0].scrollTop = $currentActiveElement.position().top;
+      })
+      .on('clear.bs.scrollspy', function () {
+        removeCurrentActiveClass();
+      });
+
+    function removeCurrentActiveClass () {
+      $(tocSelector + ' ' + activeCurrentSelector)
+        .removeClass(activeCurrentSelector.substring(1));
+    }
+
+    function processTOC () {
+      getTOCMaxHeight();
+      toggleTOCOverflowIndicators();
+    }
+
+    function getTOCMaxHeight () {
+      var $sidebarInner = $('.sidebar-inner');
+      var height = $('.sidebar').height() -
+                   $tocSelector.position().top -
+                   $('.post-toc-indicator-bottom').height();
+
+      $tocSelector.css('height', height);
+
+      return height;
+    }
+
+    function toggleTOCOverflowIndicators () {
+      tocOverflowIndicator(
+        '.post-toc-indicator-top',
+        $tocSelector.scrollTop() > 0 ? 'show' : 'hide'
+      );
+
+      tocOverflowIndicator(
+        '.post-toc-indicator-bottom',
+        $tocSelector.scrollTop() >= $tocSelector.find('ol').height() - $tocSelector.height() ? 'hide' : 'show'
+      )
+    }
+
+    $(document).on('sidebar.didShow', function () {
+      processTOC();
+    });
+
+    $('body').scrollspy({ target: tocSelector });
+    $(window).on('resize', function () {
+      if ( $('.sidebar').hasClass('sidebar-active') ) {
+        processTOC();
+      }
+    });
+
+    onScroll($tocSelector);
+
+    function onScroll (element) {
+      element.on('mousewheel DOMMouseScroll', function (event) {
+          var oe = event.originalEvent;
+          var delta = oe.wheelDelta || -oe.detail;
+          var self = this;
+
+          this.scrollTop += ( delta < 0 ? 1 : -1 ) * 30;
+          event.preventDefault();
+
+          toggleTOCOverflowIndicators();
+      });
+    }
+
+    function tocOverflowIndicator (indicator, action) {
+      $(indicator).velocity('stop').velocity({
+        opacity: action === 'show' ? 0.4 : 0
+      }, { duration: 100 });
+    }
+
+  });
+</script>
+
+
+  <script type="text/javascript" id="sidebar.nav">
+    $(document).ready(function () {
+      var html = $('html');
+
+      $('.sidebar-nav li').on('click', function () {
+        var item = $(this);
+        var activeTabClassName = 'sidebar-nav-active';
+        var activePanelClassName = 'sidebar-panel-active';
+        if (item.hasClass(activeTabClassName)) {
+          return;
+        }
+
+        var currentTarget = $('.' + activePanelClassName);
+        var target = $('.' + item.data('target'));
+
+        currentTarget.velocity('transition.slideUpOut', 200, function () {
+          target
+            .velocity('stop')
+            .velocity('transition.slideDownIn', 200)
+            .addClass(activePanelClassName);
+        });
+
+        item.siblings().removeClass(activeTabClassName);
+        item.addClass(activeTabClassName);
+      });
+
+      $('.post-toc a').on('click', function (e) {
+        e.preventDefault();
+        var offset = $(escapeSelector(this.getAttribute('href'))).offset().top;
+        html.velocity('stop').velocity('scroll', {
+          offset: offset  + 'px',
+          mobileHA: false
+        });
+      });
+
+      // Expand sidebar on post detail page by default, when post has a toc.
+      var $tocContent = $('.post-toc-content');
+      if (isDesktop() && CONFIG.sidebar === 'post') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          displaySidebar();
+        }
+      }
+    });
+  </script>
+
+
+
+
+  <script type="text/javascript">
+    $(document).ready(function () {
+      if (CONFIG.sidebar === 'always') {
+        displaySidebar();
+      }
+    });
+  </script>
+
+  
+
+  
+  
+  
+
+  
+
+
+
+
+  
+  
+
+</body>
+</html>
